@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Brian A. Fannin, ACAS" />
+
+<meta name="date" content="2016-08-02" />
+
+<title>raw - R Actuarial Workshops</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">raw - R Actuarial Workshops</h1>
+<h4 class="author"><em>Brian A. Fannin, ACAS</em></h4>
+<h4 class="date"><em>2016-08-02</em></h4>
+
+
+
+<div id="raw---r-actuarial-workshops" class="section level1">
+<h1>raw - R Actuarial Workshops</h1>
+<p>This is a packge which stores data used in R workshops sponsored by the Casualty Actuarial Society<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. This short vignette will describe the various data sets and give examples of their use. As well, there is a short note about each of the packages which we suggest be installed.</p>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>Once the <code>raw</code> package has been installed, any of the data sets may be accessed. To get a list of the data sets available in any package in R, one may call the <code>data</code> function with the name of the package as an argument.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;raw&quot;</span>)</code></pre></div>
+<p>To get help about any data set, one may use R’s help facility to display the documentation for that data set.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(raw)
+?COTOR2</code></pre></div>
+<div id="cotor" class="section level3">
+<h3>COTOR</h3>
+<p>There are four sets in all. Note that the numbering begins at 2. So far as I am aware, the data for the first COTOR challenge is not available from the CAS website. Each data set has a set of randomly generated non-life insurance claims.</p>
+</div>
+<div id="ppa" class="section level3">
+<h3>PPA</h3>
+<p>This is data taken from Appendix A of the <a href="%22Basic%20Ratemaking%22">http://www.casact.org/library/studynotes/Werner_Modlin_Ratemaking.pdf</a> study note by Werner and Modlin. This is a suite of data - six sets in all - pertaining to personal auto. More information may be found in the note itself.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(PPA)
+<span class="kw">head</span>(PPA_LossDevelopment)</code></pre></div>
+</div>
+<div id="huricane" class="section level3">
+<h3>Huricane</h3>
+<p>This contains basic data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;Hurricane&quot;</span>)
+
+<span class="kw">hist</span>(Hurricane$Wind, <span class="dt">xlab =</span> <span class="st">&quot;Wind Speed (knots)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="region-and-state-experience" class="section level3">
+<h3>Region and State Experience</h3>
+<p>This is a simulated data set.</p>
+</div>
+<div id="naic" class="section level3">
+<h3>NAIC</h3>
+</div>
+</div>
+<div id="suggested-packages" class="section level1">
+<h1>Suggested Packages</h1>
+<p>When installed using the command below, <code>raw</code> will also ensure that a useful suite of packages is installed.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;raw&quot;</span>, <span class="dt">dependencies =</span> <span class="st">&quot;Suggests&quot;</span>)</code></pre></div>
+<div id="actuarial-packages" class="section level2">
+<h2>Actuarial packages</h2>
+<div id="actuar" class="section level3">
+<h3>actuar</h3>
+<p>This contains a varied set of useful actuarial tools, from loss distributions to credibility to compound loss models. This also contains the data from the “Loss Models” textbook by Klugman, Panjer and Wilmot. Read more here: <a href="https://cran.r-project.org/package=actuar" class="uri">https://cran.r-project.org/package=actuar</a>.</p>
+</div>
+<div id="chainladder" class="section level3">
+<h3>ChainLadder</h3>
+<p>ChainLadder supports the standard suite of loss reserving methods. A quick overview may be found here: <a href="https://github.com/mages/ChainLadder#chainladder">https://github.com/mages/ChainLadder</a>.</p>
+</div>
+<div id="mondate" class="section level3">
+<h3>mondate</h3>
+<p>The mondate package enables one to calculate time differences in terms of months. Trust me, you need this.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mondate)</code></pre></div>
+<pre><code>## 
+## Attaching package: 'mondate'</code></pre>
+<pre><code>## The following object is masked from 'package:base':
+## 
+##     as.difftime</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">endOfQuarter &lt;-<span class="st"> </span><span class="kw">mondate</span>(<span class="st">&quot;2010-03-31&quot;</span>)
+mondate::<span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <span class="st">&quot;months&quot;</span>)</code></pre></div>
+<pre><code>## mondate: timeunits=&quot;months&quot;
+## [1] 2010-06-30</code></pre>
+</div>
+<div id="fincal" class="section level3">
+<h3>FinCal</h3>
+<p>Contains functions for present value, annuities, internal rate of return and more. Website here: <a href="http://felixfan.github.io/FinCal/" class="uri">http://felixfan.github.io/FinCal/</a></p>
+</div>
+<div id="rstan" class="section level3">
+<h3>rstan</h3>
+<p>The <code>rstan</code> package is the R implementation of the Stan MCMC project. This is an incredibly powerful and easy to use Bayesian framework. No, really, it is. If you’re into Bayesian computation, this is essential. If you’re not a Bayesian, this package will make you one. There are piles of material on the Stan website <a href="http://mc-stan.org/interfaces/rstan" class="uri">http://mc-stan.org/interfaces/rstan</a>. The tutorials are easy to follow and worth your time.</p>
+</div>
+<div id="nlme" class="section level3">
+<h3>nlme</h3>
+<p>This package supports hierarchical linear modelling. What’s hierarchical linear modelling? It’s basically a credibility method that’s very popular in the social sciences and other non-actuarial fields. It should be popular everywhere.</p>
+</div>
+</div>
+<div id="the-hadleyverse" class="section level2">
+<h2>The Hadleyverse</h2>
+<p>Hadley Wickham is an incredibly prolific and popular programmer who has made some big contributions to the R landscape.</p>
+<div id="dplyr" class="section level3">
+<h3>dplyr</h3>
+<p>I use the <code>dplyr</code> package on a daily basis. It has a simple, easy to understand grammar for data manipulation and summarization. Read the introduction here: <a href="https://github.com/hadley/dplyr#dplyr" class="uri">https://github.com/hadley/dplyr#dplyr</a>.</p>
+</div>
+<div id="readr" class="section level3">
+<h3>readr</h3>
+<p>The <code>readr</code> package has a few nice improvements to the basic functions for reading in flat data files. Among other things, it makes it easier to specify column data types and will give useful warnings when it encounters problematic data cells. Read more here: <a href="https://github.com/hadley/readr#readr">https://github.com/hadley/readr</a></p>
+</div>
+<div id="readxl" class="section level3">
+<h3>readxl</h3>
+<p>There are a number of packages to read and write Excel files (<code>xlsx</code> and <code>XLConnect</code> are two). However, most use a java virtual machine to access the files and can run into memory issues. <code>readxl</code> doesn’t.</p>
+</div>
+<div id="tidyr" class="section level3">
+<h3>tidyr</h3>
+<p>Tidyr is a light but useful set of functions to manipulate data. You’ll most often see the <code>spread</code> and <code>gather</code> functions used to transform a data set between “long” and “wide” formats. There’s a short intro here: <a href="https://blog.rstudio.org/2014/07/22/introducing-tidyr/" class="uri">https://blog.rstudio.org/2014/07/22/introducing-tidyr/</a>.</p>
+</div>
+<div id="ggplot2" class="section level3">
+<h3>ggplot2</h3>
+<p>This is a very powerful, flexible graphing engine. Quite a few books have been written about it, which is testament to both its complexity and utility.</p>
+</div>
+<div id="lubridate" class="section level3">
+<h3>lubridate</h3>
+<p>Lubridate has a wealth of functions for manipulating dates and time intervals.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)</code></pre></div>
+<pre><code>## 
+## Attaching package: 'lubridate'</code></pre>
+<pre><code>## The following objects are masked from 'package:mondate':
+## 
+##     day, month, quarter, year, ymd</code></pre>
+<pre><code>## The following object is masked from 'package:base':
+## 
+##     date</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myDate &lt;-<span class="st"> </span><span class="kw">mdy</span>(<span class="st">&quot;2/16/1972&quot;</span>)
+<span class="kw">year</span>(myDate) &lt;-<span class="st"> </span><span class="dv">2016</span></code></pre></div>
+</div>
+<div id="scales" class="section level3">
+<h3>scales</h3>
+<p>Scales has some functions to render numbers in pretty formats.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;COTOR2&quot;</span>)
+<span class="kw">head</span>(COTOR2)</code></pre></div>
+<pre><code>## [1]   1009.2364 121785.9300    913.5061   4513.6190   1010.8515   3227.8844</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(scales::<span class="kw">dollar</span>(COTOR2))</code></pre></div>
+<pre><code>## [1] &quot;$1,009&quot;   &quot;$121,786&quot; &quot;$914&quot;     &quot;$4,514&quot;   &quot;$1,011&quot;   &quot;$3,228&quot;</code></pre>
+</div>
+<div id="devtools" class="section level3">
+<h3>devtools</h3>
+<p>This package is likely not all that useful to beginners, but it does have one very useful function: <code>install_github</code>. This will allow you to intall the development version of packages from the <a href="https://github.com/">GitHub</a> codesharing site. For example, the command below will ensure that you’re always up to date with this package.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;PirateGrunt/raw&quot;</span>)</code></pre></div>
+</div>
+</div>
+<div id="documentation" class="section level2">
+<h2>Documentation</h2>
+<div id="knitr" class="section level3">
+<h3>knitr</h3>
+<p>The <a href="http://yihui.name/knitr/">knitr</a> package, written by Yihue Xie, enables a user to combine R code and documentation in a single file. That file may then be converted into a format like PDF, HTML or Word.</p>
+</div>
+<div id="rmarkdown" class="section level3">
+<h3>rmarkdown</h3>
+<p>This package enhances <code>knitr</code> to make the document conversion described above a bit easier. This is an incredibly powerful framework. Read more here: <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>.</p>
+</div>
+</div>
+<div id="maps-and-maptools" class="section level2">
+<h2>maps and maptools</h2>
+<p>As their names suggest, these packages support drawing maps.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The CAS has neither produced nor endorsed the content of this package.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
