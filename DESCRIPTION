@@ -4,7 +4,7 @@ Description: In order to facilitate R instruction for actuaries, we have organiz
   sets of publicly available data of interest to non-life actuaries. In addition, we suggest 
   a set of packages, which most practicing actuaries will use routinely. Finally, there is 
   an R markdown skeleton for basic reserve analysis.
-Version: 0.1.3
+Version: 0.1.4
 Maintainer: Brian A. Fannin <FanninQED@yahoo.com>
 Authors@R: person("Brian A.", "Fannin"
     , role = c("aut", "cre")
@@ -14,13 +14,14 @@ License: CC0
 Depends: R (>= 3.0)
 Suggests: dplyr, tidyr, ggplot2, lubridate, devtools, actuar,
         ChainLadder, knitr, readr, readxl, rmarkdown, mondate, FinCal,
-        rstan, scales, nlme, maps
+        rstan, scales, nlme, maps, fitdistrplus, tweedie, nycflights13,
+        XML, RColorBrewer, Lahman
 VignetteBuilder: knitr
 Type: Package
 RoxygenNote: 5.0.1
 URL: http://pirategrunt.com/raw/
 NeedsCompilation: no
-Packaged: 2016-11-09 19:25:05 UTC; brian
+Packaged: 2016-11-28 16:29:59 UTC; brian
 Author: Brian A. Fannin [aut, cre]
 Repository: CRAN
-Date/Publication: 2016-11-10 17:55:40
+Date/Publication: 2016-11-29 08:10:04
