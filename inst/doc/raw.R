@@ -22,6 +22,9 @@ library(mondate)
 endOfQuarter <- mondate("2010-03-31")
 mondate::add(endOfQuarter, 3, "months")
 
+## ----eval=FALSE----------------------------------------------------------
+#  install.packages("rstan")
+
 ## ----results='hide'------------------------------------------------------
 library(lubridate)
 myDate <- mdy("2/16/1972")
