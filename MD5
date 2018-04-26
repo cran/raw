@@ -1,6 +1,6 @@
-f7a04822c8824e9793428909fcb4c50c *DESCRIPTION
+959b27d7e48a66b15293d29989c81a5c *DESCRIPTION
 2b32cad0d59819b4bb1b17aa257a8fe0 *NAMESPACE
-1d494cb81f58a0ad3a706db8c9b540af *NEWS
+1816f823e3b02a30c620dd5109bcb70c *NEWS
 5af74f8973b2e74fd8c0418ac798aad4 *R/COTOR.R
 fb1b050ce89ffb1ec6c95cc06dcc5855 *R/CasColNames.R
 9ed1f15a4387feb84a17bdd2c018fed2 *R/Hurricane.R
@@ -10,7 +10,7 @@ a8f4fd65d99c32414e6a806d30051210 *R/NJM_WC.R
 4093df20a3a3352311709a62e01638c7 *R/PPA.R
 3b9d52d7003c9025600a4382e3333dd7 *R/RegionExperience.R
 e7f52c730c24e16e983c8995851a6965 *R/raw.R
-d8899ac7f08065cdf944fc48d4012472 *build/vignette.rds
+254c27835ad7d09b58a92798507b9785 *build/vignette.rds
 320214ac0d82a6af9019dc532e9a2dd7 *data/COTOR2.rda
 3617cf654e880e5c6737b2a86661e759 *data/COTOR3.rda
 104ecbad498bd0ae036019cdc32c26f1 *data/COTOR4.rda
@@ -27,11 +27,11 @@ bf8c011c40802cc6b14c68aafbe048bd *data/othliab.rda
 b1e92cfaedfe4a5902bd92b4ae6f885b *data/ppauto.rda
 55d8e6992d64d2a5258cef5cebd32e80 *data/prodliab.rda
 8a67a3d51e09f514ce3ccf7ffbdf360f *data/wkcomp.rda
-e425d687a80f999ed058c87a48e32fe1 *inst/doc/raw.R
-850ba2b9fc41c25173e876acfbe3561d *inst/doc/raw.Rmd
-766b8253783c3874afc91634d313691b *inst/doc/raw.html
+25a038bbb3adcd96c474684712345430 *inst/doc/raw.R
+c5228bb0d9be86435b4b4a959a5ea002 *inst/doc/raw.Rmd
+bb97530b377d5d57e8578ac89d5f74d8 *inst/doc/raw.html
 f33073fa509fcdae133252e5d616f6fa *inst/rmarkdown/templates/reserveReview/skeleton/skeleton.Rmd
-70882788751d08dead896a6909b87306 *inst/rmarkdown/templates/reserveReview/template.yaml
+11f5fd54e5c9331aad1050ce11f4eed8 *inst/rmarkdown/templates/reserveReview/template.yaml
 0439bee25089758e666054127a24fa3f *man/COTOR2.Rd
 b30d6d87fc8e84ea12ac5e7c5e296dbc *man/CasColNames.Rd
 10718d0fff623ecdd280a5213c0061b8 *man/Hurricane.Rd
@@ -46,4 +46,4 @@ e2237fc67f4cddc99d7bd1c7ac7f5b99 *man/PackageNeedsUpdating.Rd
 327db50feb5934e9622867587c906809 *man/RegionExperience.Rd
 b2cfd9eb399184da0985dedcf6771124 *man/StateExperience.Rd
 108666a389ff56f2a1700b2fc693bb2d *man/raw.Rd
-850ba2b9fc41c25173e876acfbe3561d *vignettes/raw.Rmd
+c5228bb0d9be86435b4b4a959a5ea002 *vignettes/raw.Rmd

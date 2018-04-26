@@ -12,7 +12,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS" />
 
-<meta name="date" content="2017-08-08" />
+<meta name="date" content="2018-04-25" />
 
 <title>raw - R Actuarial Workshops</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">raw - R Actuarial Workshops</h1>
 <h4 class="author"><em>Brian A. Fannin, ACAS</em></h4>
-<h4 class="date"><em>2017-08-08</em></h4>
+<h4 class="date"><em>2018-04-25</em></h4>
 
 
 
@@ -91,7 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="ppa" class="section level3">
 <h3>PPA</h3>
-<p>This is data taken from Appendix A of the <a href="%22Basic%20Ratemaking%22">http://www.casact.org/library/studynotes/Werner_Modlin_Ratemaking.pdf</a> study note by Werner and Modlin. This is a suite of data - six sets in all - pertaining to personal auto. More information may be found in the note itself.</p>
+<p>This is data taken from Appendix A of the <a href="http://www.casact.org/library/studynotes/Werner_Modlin_Ratemaking.pdf">Basic Ratemaking study note</a> by Werner and Modlin. This is a suite of data - six sets in all - pertaining to personal auto. More information may be found in the note itself.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(PPA)
 <span class="kw">head</span>(PPA_LossDevelopment)</code></pre></div>
 </div>
@@ -100,15 +100,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This contains basic data</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;Hurricane&quot;</span>)
 
-<span class="kw">hist</span>(Hurricane$Wind, <span class="dt">xlab =</span> <span class="st">&quot;Wind Speed (knots)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<span class="kw">hist</span>(Hurricane<span class="op">$</span>Wind, <span class="dt">xlab =</span> <span class="st">&quot;Wind Speed (knots)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 </div>
 <div id="region-and-state-experience" class="section level3">
 <h3>Region and State Experience</h3>
-<p>This is a simulated data set.</p>
+<p>This are simulated data sets.</p>
 </div>
 <div id="naic" class="section level3">
 <h3>NAIC</h3>
+<p>This data represents ten complete years of Schedule P development from many NAIC reporting companies. The data was prepared by Glenn Meyers and Peng Shi and is available from the <a href="http://www.casact.org/research/index.cfm?fa=loss_reserves_data">CAS</a>.</p>
 </div>
 </div>
 <div id="suggested-packages" class="section level1">
@@ -135,7 +136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 
 ##     as.difftime</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">endOfQuarter &lt;-<span class="st"> </span><span class="kw">mondate</span>(<span class="st">&quot;2010-03-31&quot;</span>)
-mondate::<span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <span class="st">&quot;months&quot;</span>)</code></pre></div>
+mondate<span class="op">::</span><span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <span class="st">&quot;months&quot;</span>)</code></pre></div>
 <pre><code>## mondate: timeunits=&quot;months&quot;
 ## [1] 2010-06-30</code></pre>
 </div>
@@ -154,9 +155,18 @@ mondate::<span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <s
 <p>This package supports hierarchical linear modelling. What’s hierarchical linear modelling? It’s basically a credibility method that’s very popular in the social sciences and other non-actuarial fields. It should be popular everywhere.</p>
 </div>
 </div>
-<div id="the-hadleyverse" class="section level2">
-<h2>The Hadleyverse</h2>
-<p>Hadley Wickham is an incredibly prolific and popular programmer who has made some big contributions to the R landscape.</p>
+<div id="the-tidyverse" class="section level2">
+<h2>The tidyverse</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.4
+## ✔ tidyr   0.8.0     ✔ stringr 1.3.0
+## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<p><a href="http://hadley.nz/">Hadley Wickham</a> is an incredibly prolific and popular programmer who has made some big contributions to the R landscape.</p>
 <div id="dplyr" class="section level3">
 <h3>dplyr</h3>
 <p>I use the <code>dplyr</code> package on a daily basis. It has a simple, easy to understand grammar for data manipulation and summarization. Read the introduction here: <a href="https://github.com/hadley/dplyr#dplyr" class="uri">https://github.com/hadley/dplyr#dplyr</a>.</p>
@@ -171,7 +181,7 @@ mondate::<span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <s
 </div>
 <div id="tidyr" class="section level3">
 <h3>tidyr</h3>
-<p>Tidyr is a light but useful set of functions to manipulate data. You’ll most often see the <code>spread</code> and <code>gather</code> functions used to transform a data set between “long” and “wide” formats. There’s a short intro here: <a href="https://blog.rstudio.org/2014/07/22/introducing-tidyr/" class="uri">https://blog.rstudio.org/2014/07/22/introducing-tidyr/</a>.</p>
+<p>tidyr is a light but useful set of functions to manipulate data. You’ll most often see the <code>spread</code> and <code>gather</code> functions used to transform a data set between “long” and “wide” formats. There’s a short intro here: <a href="https://blog.rstudio.org/2014/07/22/introducing-tidyr/" class="uri">https://blog.rstudio.org/2014/07/22/introducing-tidyr/</a>.</p>
 </div>
 <div id="ggplot2" class="section level3">
 <h3>ggplot2</h3>
@@ -195,16 +205,25 @@ mondate::<span class="kw">add</span>(endOfQuarter, <span class="dv">3</span>, <s
 <div id="scales" class="section level3">
 <h3>scales</h3>
 <p>Scales has some functions to render numbers in pretty formats.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scales)</code></pre></div>
+<pre><code>## 
+## Attaching package: 'scales'</code></pre>
+<pre><code>## The following object is masked from 'package:purrr':
+## 
+##     discard</code></pre>
+<pre><code>## The following object is masked from 'package:readr':
+## 
+##     col_factor</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;COTOR2&quot;</span>)
 <span class="kw">head</span>(COTOR2)</code></pre></div>
 <pre><code>## [1]   1009.2364 121785.9300    913.5061   4513.6190   1010.8515   3227.8844</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(scales::<span class="kw">dollar</span>(COTOR2))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">dollar</span>(COTOR2))</code></pre></div>
 <pre><code>## [1] &quot;$1,009&quot;   &quot;$121,786&quot; &quot;$914&quot;     &quot;$4,514&quot;   &quot;$1,011&quot;   &quot;$3,228&quot;</code></pre>
 </div>
 <div id="devtools" class="section level3">
 <h3>devtools</h3>
 <p>This package is likely not all that useful to beginners, but it does have one very useful function: <code>install_github</code>. This will allow you to intall the development version of packages from the <a href="https://github.com/">GitHub</a> codesharing site. For example, the command below will ensure that you’re always up to date with this package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;PirateGrunt/raw&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;PirateGrunt/raw&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="documentation" class="section level2">

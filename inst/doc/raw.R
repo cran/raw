@@ -25,15 +25,19 @@ mondate::add(endOfQuarter, 3, "months")
 ## ----eval=FALSE----------------------------------------------------------
 #  install.packages("rstan")
 
+## ------------------------------------------------------------------------
+library(tidyverse)
+
 ## ----results='hide'------------------------------------------------------
 library(lubridate)
 myDate <- mdy("2/16/1972")
 year(myDate) <- 2016
 
 ## ------------------------------------------------------------------------
+library(scales)
 data("COTOR2")
 head(COTOR2)
-head(scales::dollar(COTOR2))
+head(dollar(COTOR2))
 
 ## ----eval=FALSE----------------------------------------------------------
 #  devtools::install_github("PirateGrunt/raw")
