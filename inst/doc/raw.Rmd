@@ -1,5 +1,5 @@
 ---
-title: "raw - R Actuarial Workshops"
+title: "raw"
 author: "Brian A. Fannin, ACAS"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -9,24 +9,31 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+
 # raw - R Actuarial Workshops
 
 This is a packge which stores data used in R workshops sponsored by the Casualty Actuarial Society[^CAS_CYA]. This short vignette will describe the various data sets and give examples of their use. As well, there is a short note about each of the packages which we suggest be installed.
 
 [^CAS_CYA]:The CAS has neither produced nor endorsed the content of this package.
 
+```{r}
+library(raw)
+```
+
 # Data
 
 Once the `raw` package has been installed, any of the data sets may be accessed. To get a list of the data sets available in any package in R, one may call the `data` function with the name of the package as an argument. 
 
-```{r results='hide'}
+```{r eval = FALSE}
 data(package = "raw")
 ```
 
 To get help about any data set, one may use R's help facility to display the documentation for that data set. 
 
-```{r results='hide'}
-library(raw)
+```{r eval = FALSE}
 ?COTOR2
 ```
 
@@ -101,7 +108,7 @@ At the time of writing, this package has been removed from the list of suggested
 install.packages("rstan")
 ```
 
-The `rstan` package is the R implementation of the Stan MCMC project. This is an incredibly powerful and easy to use Bayesian framework. No, really, it is. If you're into Bayesian computation, this is essential. If you're not a Bayesian, this package will make you one. There are piles of material on the Stan website [http://mc-stan.org/interfaces/rstan](http://mc-stan.org/interfaces/rstan). The tutorials are easy to follow and worth your time.
+The `rstan` package is the R implementation of the Stan MCMC project. This is an incredibly powerful and easy to use Bayesian framework. No, really, it is. If you're into Bayesian computation, this is essential. If you're not a Bayesian, this package will make you one. There are piles of material on the Stan website [https://mc-stan.org/users/interfaces/rstan](https://mc-stan.org/users/interfaces/rstan.html). The tutorials are easy to follow and worth your time.
 
 ### nlme
 
@@ -109,7 +116,7 @@ This package supports hierarchical linear modelling. What's hierarchical linear 
 
 ## The tidyverse
 
-```{r}
+```{r eval=FALSE}
 library(tidyverse)
 ```
 
@@ -117,11 +124,11 @@ library(tidyverse)
 
 ### dplyr
 
-I use the `dplyr` package on a daily basis. It has a simple, easy to understand grammar for data manipulation and summarization. Read the introduction here: [https://github.com/hadley/dplyr#dplyr](https://github.com/hadley/dplyr#dplyr). 
+I use the `dplyr` package on a daily basis. It has a simple, easy to understand grammar for data manipulation and summarization. Read the introduction here: [https://github.com/tidyverse/dplyr](https://github.com/tidyverse/dplyr). 
 
 ### readr
 
-The `readr` package has a few nice improvements to the basic functions for reading in flat data files. Among other things, it makes it easier to specify column data types and will give useful warnings when it encounters problematic data cells. Read more here: [https://github.com/hadley/readr](https://github.com/hadley/readr#readr)
+The `readr` package has a few nice improvements to the basic functions for reading in flat data files. Among other things, it makes it easier to specify column data types and will give useful warnings when it encounters problematic data cells. Read more here: [https://github.com/tidyverse/readr](https://github.com/tidyverse/readr)
 
 ### readxl
 
@@ -129,7 +136,7 @@ There are a number of packages to read and write Excel files (`xlsx` and `XLConn
 
 ### tidyr 
 
-tidyr is a light but useful set of functions to manipulate data. You'll most often see the `spread` and `gather` functions used to transform a data set between "long" and "wide" formats. There's a short intro here: [https://blog.rstudio.org/2014/07/22/introducing-tidyr/](https://blog.rstudio.org/2014/07/22/introducing-tidyr/).
+tidyr is a light but useful set of functions to manipulate data. You'll most often see the `spread` and `gather` functions used to transform a data set between "long" and "wide" formats. There's a short intro here: [https://blog.rstudio.com/2014/07/22/introducing-tidyr/](https://blog.rstudio.com/2014/07/22/introducing-tidyr/).
 
 ### ggplot2
 
@@ -168,11 +175,11 @@ devtools::install_github("PirateGrunt/raw")
 
 ### knitr
 
-The [knitr](http://yihui.name/knitr/) package, written by Yihue Xie, enables a user to combine R code and documentation in a single file. That file may then be converted into a format like PDF, HTML or Word. 
+The [knitr](https://yihui.org/knitr/) package, written by Yihue Xie, enables a user to combine R code and documentation in a single file. That file may then be converted into a format like PDF, HTML or Word. 
 
 ### rmarkdown
 
-This package enhances `knitr` to make the document conversion described above a bit easier. This is an incredibly powerful framework. Read more here: [http://rmarkdown.rstudio.com/](http://rmarkdown.rstudio.com/).
+This package enhances `knitr` to make the document conversion described above a bit easier. This is an incredibly powerful framework. Read more here: [https://rmarkdown.rstudio.com/](https://rmarkdown.rstudio.com/).
 
 ## maps and maptools
 

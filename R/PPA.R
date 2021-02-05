@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 #' Private Passenger Auto (PPA) Ratemaking Data
 #' 
 #' @name PPA
@@ -9,7 +13,7 @@
 #' 
 #' @description 
 #' 
-#' This is data taken from Appendix A of the \href{http://www.casact.org/library/studynotes/Werner_Modlin_Ratemaking.pdf}{"Basic Ratemaking"} study 
+#' This is data taken from Appendix A of the \href{https://www.casact.org/library/studynotes/Werner_Modlin_Ratemaking.pdf}{"Basic Ratemaking"} study 
 #' note by Werner and Modlin.
 #' 
 #' \strong{Rate change}

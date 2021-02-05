@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 #' MultiTri
 #' 
 #' @name MultiTri
@@ -22,9 +26,9 @@
 #'    \item Reserve1997: Posted reserves as of year-end 1997.
 #' }
 #' 
-#' @source \url{http://www.casact.org/research/reserve_data/ppauto_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/wkcomp_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/othliab_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/ppauto_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/wkcomp_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/othliab_pos.csv}
 #' @docType data
 #' 
 #' @seealso \code{\link{NAIC}}
@@ -37,7 +41,7 @@ NULL
 #' @description 
 #' 
 #' This data represents ten complete years of Schedule P development for many NAIC reporting companies. The data was
-#' prepared by Glenn Meyers and Peng Shi and is available from the CAS \href{http://www.casact.org/research/index.cfm?fa=loss_reserves_data}{http://www.casact.org/research/index.cfm?fa=loss_reserves_data}.
+#' prepared by Glenn Meyers and Peng Shi and is available from the CAS \href{https://www.casact.org/research/index.cfm?fa=loss_reserves_data}{https://www.casact.org/research/index.cfm?fa=loss_reserves_data}.
 #' 
 #' NOte that the columns have been given more user friendly names. The original column names may be restored by using the CasColNames function.
 #' 
@@ -58,12 +62,12 @@ NULL
 #' }
 #'
 #' 
-#' @source \url{http://www.casact.org/research/reserve_data/ppauto_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/wkcomp_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/comauto_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/medmal_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/prodliab_pos.csv}
-#' @source \url{http://www.casact.org/research/reserve_data/othliab_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/ppauto_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/wkcomp_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/comauto_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/medmal_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/prodliab_pos.csv}
+#' @source \url{https://www.casact.org/research/reserve_data/othliab_pos.csv}
 #' @docType data
 #' 
 #' @aliases ppauto wkcomp comauto medmal othliab prodliab

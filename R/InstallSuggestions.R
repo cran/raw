@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 #' InstallSuggestions
 #' @name InstallSuggestions
 #' 
@@ -21,7 +25,7 @@
 #' 
 InstallSuggestions <- function (pkg = "raw", quiet, ...){
   
-  strSuggestions <- PackageDependencies(pkg, "Suggests")
+  strSuggestions <- c('tidyverse', PackageDependencies(pkg, "Suggests"))
 
   message("Installing suggested packages. This may take a while.")
   
